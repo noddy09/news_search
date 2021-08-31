@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "32968b2c-3037-4ad1-8117-ae62e9f5b84d",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Gangadhar=Shaktiman",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost/rest/login/",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rest",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost/rest/register/",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rest",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search news",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e2231238c0e10b2e097f9d6bc6227f83bb61be90",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/rest/search/?q=election",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rest",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "election"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Suggest Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token e2231238c0e10b2e097f9d6bc6227f83bb61be90",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost/rest/suggest/?q=nare",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"rest",
+						"suggest",
+						""
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "nare"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
