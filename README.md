@@ -3,14 +3,13 @@
 
 ## About
 Simple interactive platform which internally uses [News API](https://newsapi.org/) to fetch News based on provided keywords.
-To keep this application short and simple, I have used [jQuery](https://github.com/jquery/jquery) as frontend and [Django](https://github.com/django/django) with [DRF](https://github.com/encode/django-rest-framework) as backend. [Click here]() to know about implemetation.
+To keep this application short and simple, I have used [jQuery](https://github.com/jquery/jquery) as frontend and [Django](https://github.com/django/django) with [DRF](https://github.com/encode/django-rest-framework) as backend. [Click here](docs/about.md) to know about implemetation.
 
 
 
 ## Installation
 
 Following instructions are meant for Debian based Linux distro, but not limited to. I suggest you to find alternatives packages suitable your distro, especially for database server.
-
 
 
 ### Setup application server
@@ -41,6 +40,20 @@ python manage.py collectstatic
 ```sh
 python manage.py runserver localhost:8080
 ```
+
+#### Async task:
+- For async celery task, open new terminal and load same virtual environment:
+```sh
+. env/bin/activate
+```
+
+- Change directory to application code and call run celery application:
+```sh
+cd news_bl
+celery -A news_bl worker -l INFO 
+```
+
+- You can add multiple workers for celery application by '--concurrency=2' option.
 
 
 ### Setup webserver
