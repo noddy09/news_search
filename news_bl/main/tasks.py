@@ -4,12 +4,12 @@ from .sealirizers import ArticleSerializer
 from .models import Article
 from channels import layers
 from asgiref.sync import async_to_sync
-from celery.decorators import task
+from celery import shared_task
 from django.conf import settings
 
 from .models import *
 
-@task
+@shared_task
 def fetch_news(keyword, channel_name):
     articles_res = None
     try:

@@ -60,15 +60,15 @@ celery -A news_bl worker -l INFO
 - Get your full path of frontend directory where index.html is resides and replace same with `__NEWS_INDEX_ROOT__` in conf/etc/nginx/sites-available/news.conf file.
 - Copy news.conf congifuration to nginx's configuration directory
 ```sh
-cp conf/etc/nginx/sites-available/news.conf /etc/nginx/sites-available/
+sudo cp conf/etc/nginx/sites-available/news.conf /etc/nginx/sites-available/default
 ```
 - Link that file in sites-enable context
 ```sh
-ln -s conf/etc/nginx/sites-available/news.conf /etc/nginx/sites-enabled/
+sudo ln -s conf/etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 ```
 - Text nginx configuration
 ```sh
-nginx -t
+sudo nginx -t
 ```
 - Restart nginx service
 ```sh
